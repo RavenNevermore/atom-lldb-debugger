@@ -1,6 +1,11 @@
 AtomLldbDebuggerView = require './atom-lldb-debugger-view'
 {CompositeDisposable} = require 'atom'
 
+current_row = ->
+    editor = atom.workspace.getActiveTextEditor()
+    cursor = editor.getCursorBufferPosition()
+    return cursor.row
+
 module.exports = AtomLldbDebugger =
   atomLldbDebuggerView: null
   modalPanel: null
@@ -28,3 +33,4 @@ module.exports = AtomLldbDebugger =
 
   toggle_breakpoint: ->
     console.log 'AtomLldbDebugger was toggled!'
+    console.log "--- #{current_row()} ---"
