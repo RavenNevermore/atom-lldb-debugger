@@ -1,10 +1,16 @@
+Lldb = require './debug_facade'
 AtomLldbDebuggerView = require './atom-lldb-debugger-view'
 {CompositeDisposable} = require 'atom'
+
 
 current_row = ->
     editor = atom.workspace.getActiveTextEditor()
     cursor = editor.getCursorBufferPosition()
     return cursor.row
+
+current_file = ->
+    editor = atom.workspace.getActiveTextEditor()
+    return editor.getPath()
 
 module.exports = AtomLldbDebugger =
   atomLldbDebuggerView: null
@@ -32,5 +38,4 @@ module.exports = AtomLldbDebugger =
     atomLldbDebuggerViewState: @atomLldbDebuggerView.serialize()
 
   toggle_breakpoint: ->
-    console.log 'AtomLldbDebugger was toggled!'
-    console.log "--- #{current_row()} ---"
+    Lldb.toggle_breakpoint(current_file(), current_row())
