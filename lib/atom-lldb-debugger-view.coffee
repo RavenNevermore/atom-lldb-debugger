@@ -5,6 +5,8 @@ class AtomLldbDebuggerView
     @element = document.createElement('div')
     @element.classList.add('atom-lldb-debugger')
 
+
+
   # Returns an object that can be retrieved when package is activated
   serialize: ->
 
@@ -14,3 +16,11 @@ class AtomLldbDebuggerView
 
   getElement: ->
     @element
+
+  updateUi: ->
+      editor = atom.workspace.getActiveTextEditor()
+
+      marker = editor.markBufferRange([[8,0], [8,0]], invalidate: 'never')
+      editor.decorateMarker(    marker,
+                                type: 'gutter',
+                                class: 'breakpoint')

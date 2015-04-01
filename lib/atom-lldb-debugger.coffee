@@ -39,3 +39,4 @@ module.exports = AtomLldbDebugger =
 
   toggle_breakpoint: ->
     Lldb.toggle_breakpoint(current_file(), current_row())
+    @atomLldbDebuggerView.updateUi()

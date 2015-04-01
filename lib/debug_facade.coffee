@@ -22,7 +22,3 @@ this.toggle_breakpoint = (file, line) ->
         add_breakpoint(file, line)
 
     console.log "Breakpoints for #{file}: #{breakpoints[file]}"
-
-
-this.foo = ->
-    console.log "Bar! #{breakpoints} ---"
