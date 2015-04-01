@@ -5,12 +5,6 @@ class AtomLldbDebuggerView
     @element = document.createElement('div')
     @element.classList.add('atom-lldb-debugger')
 
-    # Create message element
-    message = document.createElement('div')
-    message.textContent = "The AtomLldbDebugger package is $ALIVE! It's ALIVE!"
-    message.classList.add('message')
-    @element.appendChild(message)
-
   # Returns an object that can be retrieved when package is activated
   serialize: ->
 

@@ -2,19 +2,19 @@
 'context-menu':
   'atom-text-editor': [
     {
-      'label': 'Toggle atom-lldb-debugger'
-      'command': 'atom-lldb-debugger:toggle'
+      'label': 'Toggle lldb breakpoint'
+      'command': 'atom-lldb-debugger:toggle_breakpoint'
     }
   ]
 'menu': [
   {
     'label': 'Packages'
     'submenu': [
-      'label': 'atom-lldb-debugger'
+      'label': 'LLDB Debugger'
       'submenu': [
         {
-          'label': 'Toggle'
-          'command': 'atom-lldb-debugger:toggle'
+          'label': 'Toggle breakpoint'
+          'command': 'atom-lldb-debugger:toggle_breakpoint'
         }
       ]
     ]
